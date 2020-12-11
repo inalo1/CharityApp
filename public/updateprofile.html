@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Charity Profile Update</title>
+</head>
+
+<body>
+
+    <!-- Charity Select Box -->
+    <form id="charity-form">
+
+        <!-- Label for Text Box -->
+        <label for="charity-input">Choose Your Charity</label>
+
+        <!-- Text Input Box -->
+        <input type="text" id="charity-input"><br>
+
+        <!-- Submit Button -->
+        <input id="select-charity" type="submit" value="GO!">
+    </form>
+
+    <!-- Charity Information -->
+    <div id="charity-div"></div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function searchCharities(charity) {
+
+        // Querying the charities api for the selected Charity, the ?app_id parameter is required, but can equal anything
+        //http://data.orghunter.com/v1/categories?user_key=8bae79f865982e4a3535b3acdc4a5109 (by Category)
+        //http://data.orghunter.com/v1/charitysearch?user_key=8bae79f865982e4a3535b3acdc4a5109&searchTerm=treasure%20coast%20humane (searches all charities)
+        var queryURL = "https://cors-anywhere.herokuapp.com/http://data.orghunter.com/v1/charitysearch?&user_key=8bae79f865982e4a3535b3acdc4a5109&searchTerm=" + charity + "";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+
+            // Printing the entire object to console
+            console.log(response);
+
+            // Constructing HTML containing the Charity information
+            var charityName = $("<h1>").text(response.data.charityName);
+            var charityCity = $("<img>").attr("src", response.data.city);
+            var charitydonation = $("<img>").attr("src", response.data.donationUrl);
+            var goToCharity = $("<a>").attr("href", response.url).text("See website");
+            var charityURL = $("<a>").attr("href", response.url).append(charityName);
+
+            // Empty the contents of the Charity-div, append the new charity content
+            //$("#charity-div").empty();
+            //$("#charity-div").append(charityURL, charityCity, charityName, charitydonation, goToCharity);
+        });
+    }
+
+    // Event handler for user clicking the select-charity button
+    $("#select-charity").on("click", function(event) {
+        // Preventing the button from trying to submit the form
+        event.preventDefault();
+        // Storing the charity name
+        var inputcharity = $("#charity-input").val().trim();
+
+        // Running the searchCharities function(passing in the Charity as an argument)
+        searchCharities(inputcharity);
+
+    });
+</script>
+
+</html>
