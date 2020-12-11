@@ -29,25 +29,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function searchCharities(charity) {
-
+        var APIKey = "8bae79f865982e4a3535b3acdc4a5109";
         // Querying the charities api for the selected Charity, the ?app_id parameter is required, but can equal anything
         //http://data.orghunter.com/v1/categories?user_key=8bae79f865982e4a3535b3acdc4a5109 (by Category)
         //http://data.orghunter.com/v1/charitysearch?user_key=8bae79f865982e4a3535b3acdc4a5109&searchTerm=treasure%20coast%20humane (searches all charities)
-        var queryURL = "https://cors-anywhere.herokuapp.com/http://data.orghunter.com/v1/charitysearch?&user_key=8bae79f865982e4a3535b3acdc4a5109&searchTerm=" + charity + "";
+        var queryURL = "https://cors-anywhere.herokuapp.com/http://data.orghunter.com/v1/categories?user_key=" + APIKey;
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response) {
 
             // Printing the entire object to console
-            console.log(response);
+            console.log(response.data[0]);
+            for (let i = 0; i < response.data.length; i++) {
+                const charityObject = response.data[i];
 
+                var charityName = $("<h1>").text(charityObjeect.charityName);
+                var charityCity = $("<img>").attr("src", charityObjeect..city);
+                var charitydonation = $("<img>").attr("src", charityObjeect.donationUrl);
+                var goToCharity = $("<a>").attr("href", charityObjeect.url).text("See website");
+                var charityURL = $("<a>").attr("href", charityObjeect.url).append(charityName);
+            }
             // Constructing HTML containing the Charity information
-            var charityName = $("<h1>").text(response.data.charityName);
-            var charityCity = $("<img>").attr("src", response.data.city);
-            var charitydonation = $("<img>").attr("src", response.data.donationUrl);
-            var goToCharity = $("<a>").attr("href", response.url).text("See website");
-            var charityURL = $("<a>").attr("href", response.url).append(charityName);
 
             // Empty the contents of the Charity-div, append the new charity content
             //$("#charity-div").empty();
