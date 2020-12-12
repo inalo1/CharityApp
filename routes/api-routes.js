@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const fetch = require("node-fetch")
+const fetch = require("node-fetch");
 
 module.exports = function(app) {
     // Using the passport.authenticate middleware with our local strategy.
@@ -37,8 +37,10 @@ module.exports = function(app) {
         req.logout();
         res.redirect("/");
     });
+
+
     app.get("/searchCharity/:charity", (req, res) => {
-        let charity = req.params.charity
+        let charity = req.params.charity;
         fetch("http://data.orghunter.com/v1/charitysearch?user_key=" + process.env.APIKEY + "& searchTerm=" + charity)
             .then(response => response.json())
             .then(data => res.json(data));
