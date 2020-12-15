@@ -19,7 +19,7 @@ $(document).ready(() => {
                 charityurl = response.data[i].url;
 
 
-                let card = $(
+                const card = $(
                     `<div class="card-deck mx-5" style="width: 18rem;">
                     <img class="card-img-top" src="img/charity-love.png" alt="Card image cap">
                     <div class="card card-body " >
