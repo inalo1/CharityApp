@@ -1,7 +1,16 @@
-/* form.signup,
+form.signup,
 form.login {
   margin-top: 50px;
-} */
-.navbar-nav {
+}
+#navbarCustom {
+  background-color: lightcoral;
+  font-family: sans-serif;
+  font-weight: bold;
+  
+}
+
+body {
+  font-family: sans-serif;
+  background-color: aliceblue;
   
 }
