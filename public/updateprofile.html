@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Charity Profile Update</title>
+</head>
+
+<body>
+
+    <!-- Charity Select Box -->
+    <form id="charity-form">
+
+        <!-- Label for Text Box -->
+        <label for="charity-input">Choose Your Charity</label>
+
+        <!-- Text Input Box -->
+        <input type="text" id="charity-input"><br>
+
+        <!-- Submit Button -->
+        <input id="select-charity" type="submit" value="GO!">
+    </form>
+
+    <!-- Charity Information -->
+    <div id="charity-div"></div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function searchCharities(charity) {
+        //  var APIKey = "8bae79f865982e4a3535b3acdc4a5109";
+        // Querying the charities api for the selected Charity, the ?app_id parameter is required, but can equal anything
+        $.ajax({
+            url: "/searchCharity/" + charity,
+            method: "GET"
+        }).then((response) => {
+            // Printing the entire object to console
+            console.log(response);
+
+            //This will be stripped out and used in our handlebars once the page is setup by IVY/LLOYD
+
+            charityName = response.data[0].charityName;
+            charityCity = response.data[0].city;
+            charityState = response.data[0].state;
+            charityZip = response.data[0].zipCode;
+            charityUrl = response.data[0].url;
+            charityDonation = response.data[0].donationURL;
+            charityCategory = response.data[0].category;
+            charityurl = response.data[0].url;
+
+
+            $("#result").empty();
+            let $card = $(
+                `<div class="card align-center mx-auto bg-light" style="width: 25rem;">
+                <div class="card card-body " >
+                <h3> ${charityName} <span class="rounded"</span></h3>
+                <p>${charityCity}, ${charityState} ${charityZip}</p>
+                <p>${charityCategory}</p>
+                <p><a href="${charityurl}">URL</a></p>
+                <p><a href="${charityDonation}">Donation URL</a></p>
+                </div>
+                </div>`
+            );
+
+            $card.appendTo("#result");
+
+
+            //$("#charity-div").append(charityURL, charityCity, charityName, charitydonation, goToCharity);
+            // Empty the contents of the Charity-div, append the new charity content
+            //$("#charity-div").empty();
+
+        });
+    }
+
+
+    // Event handler for user clicking the select-charity button
+    $("#select-charity").on("click", function(event) {
+        // Preventing the button from trying to submit the form
+        event.preventDefault();
+        // Storing the charity name
+        var inputcharity = $("#charity-input").val().trim();
+
+        // Running the searchCharities function(passing in the Charity as an argument)
+        searchCharities(inputcharity);
+
+    });
+</script>
+
+</html>
