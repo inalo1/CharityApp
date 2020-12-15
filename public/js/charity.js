@@ -20,7 +20,7 @@ $(document).ready(() => {
 
 
                 let card = $(
-                    `<div class="card-deck mx-1" style="width: 18rem;">
+                    `<div class="card-deck mx-5" style="width: 18rem;">
                     <img class="card-img-top" src="img/charity-love.png" alt="Card image cap">
                     <div class="card card-body " >
                     <h3> ${charityName} <span class="rounded"</span></h3>
@@ -42,10 +42,10 @@ $(document).ready(() => {
                 // card.appendTo("#result");
             }
         });
+        // Empties the contents of the Charity-div, append the new charity content
         $("#result").empty();
-        //
-        //$("#charity-div").append(charityURL, charityCity, charityName, charitydonation, goToCharity);
-        // Empty the contents of the Charity-div, append the new charity content
+
+
     }
     // Event handler for user clicking the select-charity button
     $("#select-charity").on("click", function(event) {

@@ -19,13 +19,13 @@ form.login {
     left: 0;
 }
 
-
-/* #result {
-    position: relative;
-} */
+#result {
+    position: initial;
+}
 
 #background {
-    background: url(/img/background.jpg);
+    background: url("/img/background.jpg");
+    background-repeat: repeat-y;
     background-position: center;
     background-size: cover;
     height: 100vh;
