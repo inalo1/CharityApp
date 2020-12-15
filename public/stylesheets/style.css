@@ -11,13 +11,14 @@ form.login {
     position: sticky;
 }
 
-#userinfo {
+
+/* #userinfo {
     margin-left: 50px;
     margin-top: 3%;
     flex-direction: column-reverse;
     position: fixed;
     left: 0;
-}
+} */
 
 #result {
     position: initial;
