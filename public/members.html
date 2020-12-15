@@ -6,6 +6,14 @@
           content="width=device-width, initial-scale=1.0" />
     <title>chair.ty</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Welcome Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">  
+    <!-- Tag-Line Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!-- Let's Do it Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./stylesheets/style.css">
@@ -21,7 +29,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href=""><i class="fa fa-home" aria-hidden="true"></i></a>
+                                    <a class="nav-link" href="./home-page.html"><i class="fa fa-home" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</a>
@@ -109,10 +117,10 @@
     <div class="card text-center" style="padding: 15px">
         <div class="card-header"></div>
         <div class="card-body">
-            <h2>Welcome <span class="member-name"></span></h2>
-            <h5 class="card-title">Take a seat. Make a Difference.</h5>
-            <p class="card-text">We're glad to have you on board! Let's get you involved. </p>
-            <a href="#" class="btn btn-primary">let's get started</a>
+            <h2 style="font-family: 'Russo One', sans-serif;">Welcome to Chair.ty!</h2>
+            <h5 class="card-title" style="font-family: 'Roboto Slab', serif;">Take a seat. Make a Difference.</h5>
+            <p class="card-text" style="font-family: 'Roboto Slab', serif;">(Or you can stand up - let your voice be heard. Either way, we're glad to have you on board!)</p>
+            <a href="#" class="btn btn-primary" style="font-family: 'Cinzel', serif;">Let's get started!</a>
         </div>
         <div class="card-footer"></div>
     </div>
@@ -125,10 +133,22 @@
                 <div id="container" style="text-align: center; padding-bottom: 20px; padding-top: 15px;">
                     <i class="fa fa-user fa-5x" aria-hidden="true"></i>
                 </div>
+                <!-- User Full Name -->
+                <div class="card" id="fullname" style="text-align: center;"> 
+                    <div class="card-body">
+                      Full Name
+                      <span class="member-name"></span>
+                    </div> 
+                </div>
+                <div class="card" id="location" style="text-align: center;"> 
+                    <div class="card-body">
+                      Location
+                    </div>
+                </div>
                 <!-- User Bio -->
                 <div class="card"> 
-                    <div class="card-body">
-                        This is where you tell us a little bit about yourself so the community can get to know you a little bit more!
+                    <div class="card-body" style="text-align: center;">
+                        Bio: tell us as little or as much as you'd like, about yourself, so the community can get to know you more!
                     </div>
                 </div>
                 <!-- User Links -->
@@ -198,7 +218,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">Charity #</h4>
                                             <p class="card-text">short charity description</p>
-                                            <a class="btn btn-primary">Sip Again!</a>
+                                            <a class="btn btn-primary">let's donate!</a>
                                         </div>
                                     </div>
                                 </div>
@@ -208,7 +228,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Charity #</h4>
                                         <p class="card-text">short charity description</p>
-                                        <a class="btn btn-primary">Sip Again!</a>
+                                        <a class="btn btn-primary">let's donate!</a>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +238,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Charity #</h4>
                                         <p class="card-text">short charity description</p>
-                                        <a class="btn btn-primary">Sip Again!</a>
+                                        <a class="btn btn-primary">let's donate!</a>
                                     </div>
                                 </div>
                             </div>
