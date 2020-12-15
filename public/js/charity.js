@@ -18,6 +18,7 @@ $(document).ready(() => {
                 charityCategory = response.data[i].category;
                 charityurl = response.data[i].url;
 
+
                 let card = $(
                     `<div class="card-deck mx-1" style="width: 18rem;">
                     <img class="card-img-top" src="img/charity-love.png" alt="Card image cap">
@@ -30,6 +31,7 @@ $(document).ready(() => {
                     <p><a href=${charityUrl} target="_blank">Charity URL</a></p>
                     <h6>Make a Donation</h6>
                     <p><a href=${charityDonation} target="_blank">Donation URL</a></p>
+                    <input class="addCharityBtn btn-primary btn-sm" type="submit" value="Add to Profile">
                     </div>
                     </div>
                     `
@@ -40,7 +42,7 @@ $(document).ready(() => {
                 // card.appendTo("#result");
             }
         });
-
+        $("#result").empty();
         //
         //$("#charity-div").append(charityURL, charityCity, charityName, charitydonation, goToCharity);
         // Empty the contents of the Charity-div, append the new charity content
@@ -59,3 +61,22 @@ $(document).ready(() => {
         searchCharities(inputcharity);
     });
 });
+
+//this function is to append the charity EIN to the DB column named Charity
+$(function() {
+    $("#addCharityBtn").on("click", function(event) {
+        event.preventDefault();
+        var id = $(this).next().text();
+
+        // Send the update request.
+        $.ajax("/api/user_data/" + id, {
+            type: "UPDATE",
+            data: ein,
+        }).then(function() {
+            console.log("Added Charity", id);
+        });
+        // Reload the page to get the updated list
+        location.reload();
+
+    });
+})

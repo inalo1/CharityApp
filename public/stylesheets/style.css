@@ -1,4 +1,33 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+    margin-top: 50px;
+}
+
+#charity-form {
+    min-width: 250px;
+    max-width: 250px;
+    margin-left: 3%;
+    margin-top: 1%;
+    position: sticky;
+}
+
+#userinfo {
+    margin-left: 50px;
+    margin-top: 3%;
+    flex-direction: column-reverse;
+    position: fixed;
+    left: 0;
+}
+
+
+/* #result {
+    position: relative;
+} */
+
+#background {
+    background: url(/img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
 }
