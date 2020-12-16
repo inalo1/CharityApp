@@ -2,7 +2,7 @@
 
 - Project Repository: [Repository](https://github.com/inalo1/CharityApp)
 
-- Working app: [Application](https://project2-rli.herokuapp.com/)
+- Working app: [Application](https://charity-app-rli.herokuapp.com/)
 
 ## Overview
 
