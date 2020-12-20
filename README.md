@@ -4,10 +4,6 @@
 
 - Working app: [Application](https://charity-app-rli.herokuapp.com/)
 
-## Overview
-
->TBA
-
 ## Table of Contents
 
 - [Description](#description)
@@ -19,12 +15,12 @@
 
 ## Description
 
->TBA
+>The CharityApp is a cool way to allow members to create a profile and add various charities to their page.
 
 ## Usage
 
 ```
-In this application...
+In this application you can create a user profile and search for various charities to add to your page. You can click to visit a particular charity's website and click the option donate. You can view other members that support similar charities.
 
 ```
 
@@ -37,7 +33,11 @@ In this application...
 
 ## Screenshots
 
+<img src="https://user-images.githubusercontent.com/70309736/102708840-179c8680-426b-11eb-8bba-390784ac1fb5.png">
 
+<img src="https://user-images.githubusercontent.com/70309736/102708843-18cdb380-426b-11eb-98cf-d7b55e8f0f5f.png">
+
+<img src="https://user-images.githubusercontent.com/70309736/102708859-44509e00-426b-11eb-99d1-dc81c0d2f5f4.png">
 
 ## Contributors
 
